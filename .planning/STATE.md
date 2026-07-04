@@ -77,6 +77,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-07-04 17:31
-Stopped at: Phase 2 plans approved.
-Resume file: .planning/phases/02-core-components-dynamic-products-data/02-01-PLAN.md
+Last session: 2026-07-04 17:40
+Stopped at: Phase 3 context approved.
+Resume file: .planning/phases/03-brand-sections-layout-assembly/03-CONTEXT.md
