@@ -5,10 +5,10 @@ import './Achievements.css';
 export const Achievements: FC = () => {
   const revealRef = useScrollReveal();
   const metrics = [
-    { value: '150+', label: 'Heritage Cows' },
-    { value: '100%', label: 'Grass-Fed pastures' },
-    { value: '0%', label: 'Additive chemicals' },
-    { value: '3', label: 'Generations of purity' },
+    { value: '1000+ kg', label: 'Paneer Supplied' },
+    { value: '100+', label: 'Partner Restaurants' },
+    { value: '10,000+', label: 'Daily Litres Fresh' },
+    { value: '100%', label: 'Organic Certified' },
   ];
 
   return (

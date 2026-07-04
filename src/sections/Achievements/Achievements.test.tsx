@@ -5,7 +5,9 @@ import { Achievements } from './Achievements';
 describe('Achievements Section', () => {
   test('renders metric values and labels', () => {
     render(<Achievements />);
-    expect(screen.getByText('150+')).toBeInTheDocument();
-    expect(screen.getByText('Heritage Cows')).toBeInTheDocument();
+    expect(screen.getByText('1000+ kg')).toBeInTheDocument();
+    expect(screen.getByText('Paneer Supplied')).toBeInTheDocument();
+    expect(screen.getByText('100+')).toBeInTheDocument();
+    expect(screen.getByText('Partner Restaurants')).toBeInTheDocument();
   });
 });
