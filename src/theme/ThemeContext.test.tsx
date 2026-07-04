@@ -1,11 +1,11 @@
 import { renderHook } from '@testing-library/react';
-import React from 'react';
+import { type ReactNode } from 'react';
 import { describe, test, expect } from 'vitest';
 import { ThemeProvider, useTheme } from './ThemeContext';
 
 describe('Theme System', () => {
   test('should provide the design tokens', () => {
-    const wrapper = ({ children }: { children: React.ReactNode }) => (
+    const wrapper = ({ children }: { children: ReactNode }) => (
       <ThemeProvider>{children}</ThemeProvider>
     );
 

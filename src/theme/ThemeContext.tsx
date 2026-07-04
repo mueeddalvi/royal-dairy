@@ -1,9 +1,9 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, type FC, type ReactNode } from 'react';
 import { themeConfig, type ThemeTokens } from './themeConfig';
 
 const ThemeContext = createContext<ThemeTokens>(themeConfig);
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [theme] = useState<ThemeTokens>(themeConfig);
 
   useEffect(() => {
