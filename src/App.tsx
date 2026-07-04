@@ -1,28 +1,46 @@
 import { ThemeProvider } from './theme';
 import { Preloader } from './components/Preloader';
+import { Hero } from './sections/Hero';
+import { ProductGrid } from './components/ProductGrid';
+import { WhoWeAre } from './sections/WhoWeAre';
+import { WhyChoose } from './sections/WhyChoose';
+import { Achievements } from './sections/Achievements';
+import { Partners } from './sections/Partners';
+import { Reviews } from './sections/Reviews';
+import { Contact } from './sections/Contact';
+import { Footer } from './sections/Footer';
 
 function App() {
   return (
     <ThemeProvider>
       <Preloader />
-      <div 
-        style={{ 
-          minHeight: '100vh', 
-          display: 'flex', 
-          flexDirection: 'column', 
-          justifyContent: 'center', 
-          alignItems: 'center',
-          backgroundColor: 'var(--color-background)',
-          color: 'var(--color-text)',
-          fontFamily: 'var(--font-heading)',
-          padding: 'var(--spacing-lg)'
-        }}
-      >
-        <h1 style={{ letterSpacing: '0.2em', color: 'var(--color-accent)' }}>ROYAL DAIRY</h1>
-        <p style={{ fontFamily: 'var(--font-body)', marginTop: 'var(--spacing-sm)', color: 'var(--color-textSecondary)' }}>
-          Pinnacle of Dairy Purity & Luxury
-        </p>
-      </div>
+      
+      <main className="app-main-layout" style={{ backgroundColor: 'var(--color-background)', minHeight: '100vh' }}>
+        <Hero />
+        
+        <div className="section-divider" style={{ borderBottom: '1px solid rgba(216, 217, 218, 0.1)' }} />
+        <div id="products" style={{ padding: '0 var(--spacing-lg)' }}>
+          <ProductGrid />
+        </div>
+
+        <div className="section-divider" style={{ borderBottom: '1px solid rgba(216, 217, 218, 0.1)' }} />
+        <WhoWeAre />
+
+        <div className="section-divider" style={{ borderBottom: '1px solid rgba(216, 217, 218, 0.1)' }} />
+        <WhyChoose />
+
+        <Achievements />
+
+        <Partners />
+
+        <div className="section-divider" style={{ borderBottom: '1px solid rgba(216, 217, 218, 0.1)' }} />
+        <Reviews />
+
+        <div className="section-divider" style={{ borderBottom: '1px solid rgba(216, 217, 218, 0.1)' }} />
+        <Contact />
+
+        <Footer />
+      </main>
     </ThemeProvider>
   );
 }
