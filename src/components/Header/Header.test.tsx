@@ -20,4 +20,11 @@ describe('Header Navigation Bar', () => {
     // Verify drawer opened class toggled
     expect(mobileDrawer).toHaveClass('open');
   });
+
+  test('conforms to keyboard navigation roles', () => {
+    render(<Header />);
+    const navigationEl = screen.getByRole('navigation');
+    expect(navigationEl).toBeInTheDocument();
+    expect(navigationEl).toHaveAttribute('aria-label', 'Main Navigation');
+  });
 });
