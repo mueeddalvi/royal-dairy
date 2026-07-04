@@ -1,7 +1,9 @@
 import { useState, type FC, type FormEvent } from 'react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Contact.css';
 
 export const Contact: FC = () => {
+  const revealRef = useScrollReveal();
   const [submitted, setSubmitted] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -24,7 +26,7 @@ export const Contact: FC = () => {
   };
 
   return (
-    <section className="contact-section" id="contact">
+    <section className="contact-section reveal-up" id="contact" ref={revealRef}>
       <div className="contact-container">
         <div className="contact-info">
           <span className="section-badge">Get in Touch</span>

@@ -1,9 +1,12 @@
 import { type FC } from 'react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './WhoWeAre.css';
 
 export const WhoWeAre: FC = () => {
+  const revealRef = useScrollReveal();
+
   return (
-    <section className="who-we-are-section" id="about">
+    <section className="who-we-are-section reveal-up" id="about" ref={revealRef}>
       <div className="section-container">
         <div className="story-content">
           <span className="section-badge">Our Heritage</span>

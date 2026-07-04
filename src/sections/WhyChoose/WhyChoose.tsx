@@ -1,7 +1,9 @@
 import { type FC } from 'react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './WhyChoose.css';
 
 export const WhyChoose: FC = () => {
+  const revealRef = useScrollReveal();
   const usps = [
     {
       title: 'A2 Heritage Cattle',
@@ -21,7 +23,7 @@ export const WhyChoose: FC = () => {
   ];
 
   return (
-    <section className="why-choose-section" id="why-choose">
+    <section className="why-choose-section reveal-up" id="why-choose" ref={revealRef}>
       <div className="why-header">
         <span className="section-badge">Our Pillars</span>
         <h2 className="why-title">WHY CHOOSE ROYAL DAIRY</h2>

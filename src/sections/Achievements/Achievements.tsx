@@ -1,7 +1,9 @@
 import { type FC } from 'react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Achievements.css';
 
 export const Achievements: FC = () => {
+  const revealRef = useScrollReveal();
   const metrics = [
     { value: '150+', label: 'Heritage Cows' },
     { value: '100%', label: 'Grass-Fed pastures' },
@@ -10,7 +12,7 @@ export const Achievements: FC = () => {
   ];
 
   return (
-    <section className="achievements-section" id="achievements">
+    <section className="achievements-section reveal-up" id="achievements" ref={revealRef}>
       <div className="achievements-container">
         {metrics.map((metric, index) => (
           <div key={index} className="metric-box">

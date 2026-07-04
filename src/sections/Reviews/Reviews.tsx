@@ -1,4 +1,5 @@
 import { useState, type FC } from 'react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Reviews.css';
 
 interface Review {
@@ -8,6 +9,7 @@ interface Review {
 }
 
 export const Reviews: FC = () => {
+  const revealRef = useScrollReveal();
   const [activeIndex, setActiveIndex] = useState(0);
   const reviews: Review[] = [
     {
@@ -38,7 +40,7 @@ export const Reviews: FC = () => {
   const activeReview = reviews[activeIndex];
 
   return (
-    <section className="reviews-section" id="reviews">
+    <section className="reviews-section reveal-up" id="reviews" ref={revealRef}>
       <span className="section-badge">Client Testimonials</span>
       <h2 className="reviews-title">CONCIERGE REVIEWS</h2>
 

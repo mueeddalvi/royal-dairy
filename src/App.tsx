@@ -1,5 +1,6 @@
 import { ThemeProvider } from './theme';
 import { Preloader } from './components/Preloader';
+import { Header } from './components/Header';
 import { Hero } from './sections/Hero';
 import { ProductGrid } from './components/ProductGrid';
 import { WhoWeAre } from './sections/WhoWeAre';
@@ -15,7 +16,8 @@ function App() {
     <ThemeProvider>
       <Preloader />
       
-      <main className="app-main-layout" style={{ backgroundColor: 'var(--color-background)', minHeight: '100vh' }}>
+      <main className="app-main-layout" style={{ backgroundColor: 'var(--color-background)', minHeight: '100vh', paddingTop: '57px' }}>
+        <Header />
         <Hero />
         
         <div className="section-divider" style={{ borderBottom: '1px solid rgba(216, 217, 218, 0.1)' }} />
