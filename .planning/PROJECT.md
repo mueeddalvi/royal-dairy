@@ -44,11 +44,20 @@ Royal Dairy requires a digital presence that reflects its high standards of puri
 
 ## Key Decisions
 
-| Decision | Rationale | Outcome |
-|----------|-----------|---------|
-| Vite | Fast, modern SPA setup, easily scales to multi-page or React Router later | — Pending |
-| Vanilla CSS Custom Properties | Ensures maximum styling flexibility, conforms to user request for native CSS and custom ThemeProvider | — Pending |
-| Product configuration TS file | Allows dynamic and scalable product listings without requiring a database in the first phase | — Pending |
+| Vite | Fast, modern SPA setup, easily scales to multi-page or React Router later | Approved/Implemented |
+| Vanilla CSS Custom Properties | Ensures maximum styling flexibility, conforms to user request for native CSS and custom ThemeProvider | Approved/Implemented |
+| Product configuration TS file | Allows dynamic and scalable product listings without requiring a database in the first phase | Approved/Implemented |
+
+## Current State
+
+- **Shipped Version**: v1.0 (completed 2026-07-04)
+- **Features delivered**: Premium single-page product landing catalog, complete with custom theme providers, intersection scroll reveal entrance hooks, tab grids filtering, testimonials sliders and inbox desks.
+
+## Next Milestone Goals (v1.1)
+
+- [ ] Complete multi-page React routing integration.
+- [ ] Implement secure customer registration and premium membership portal.
+- [ ] Add dynamic shopping carts and digital checkout interfaces.
 
 ## Evolution
 
@@ -68,4 +77,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-07-04 after initialization*
+*Last updated: 2026-07-04 after milestone v1.0 completion*
