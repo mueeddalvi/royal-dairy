@@ -6,10 +6,10 @@ describe('ProductGrid Component', () => {
   test('renders grid categories and filters items', () => {
     render(<ProductGrid />);
     // Check main title exists
-    expect(screen.getByText('THE ROYAL SELECTION')).toBeInTheDocument();
+    expect(screen.getByText('The Royal')).toBeInTheDocument();
 
     // Check filter buttons exist
-    const milkFilter = screen.getByRole('tab', { name: 'Imperial Milk' });
+    const milkFilter = screen.getByRole('tab', { name: /milk/i });
     expect(milkFilter).toBeInTheDocument();
 
     // Click milk filter

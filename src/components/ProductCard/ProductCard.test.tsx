@@ -19,5 +19,6 @@ describe('ProductCard Component', () => {
     render(<ProductCard product={mockProduct} />);
     expect(screen.getByText('Premium Test Milk')).toBeInTheDocument();
     expect(screen.getByText('$5.99')).toBeInTheDocument();
+    expect(screen.getByText('Inquire')).toBeInTheDocument();
   });
 });

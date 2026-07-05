@@ -1,6 +1,6 @@
 .why-choose-section {
   padding: var(--spacing-xxxl, 64px) var(--spacing-lg, 24px);
-  background-color: var(--color-background, #020B1E);
+  background-color: #14213d;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--color-background, #020B1E);
+  background-color: #050505;
   border-top: 1px solid var(--color-border);
   padding: var(--spacing-xxl, 48px) var(--spacing-lg, 24px) var(--spacing-xl, 32px) var(--spacing-lg, 24px);
   display: flex;

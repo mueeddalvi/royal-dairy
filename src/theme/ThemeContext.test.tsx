@@ -11,8 +11,8 @@ describe('Theme System', () => {
 
     const { result } = renderHook(() => useTheme(), { wrapper });
 
-    expect(result.current.colors.background).toBe('#020B1E');
-    expect(result.current.colors.accent).toBe('#D4AF37');
+    expect(result.current.colors.background).toBe('#14213d');
+    expect(result.current.colors.accent).toBe('#C9A84C');
     expect(result.current.fonts.heading).toBe("'Playfair Display', serif");
   });
 });

@@ -3,9 +3,11 @@ import { describe, test, expect } from 'vitest';
 import { Hero } from './Hero';
 
 describe('Hero Section', () => {
-  test('renders main titles and links', () => {
+  test('renders title and CTA links', () => {
     render(<Hero />);
-    expect(screen.getByText('ROYAL DAIRY')).toBeInTheDocument();
-    expect(screen.getByText('Experience Purity')).toBeInTheDocument();
+    expect(screen.getByText('ROYAL')).toBeInTheDocument();
+    expect(screen.getByText('DAIRY')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /explore products/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /our story/i })).toBeInTheDocument();
   });
 });

@@ -15,32 +15,16 @@ function App() {
   return (
     <ThemeProvider>
       <Preloader />
-      
-      <main className="app-main-layout" style={{ backgroundColor: 'var(--color-background)', minHeight: '100vh', paddingTop: '57px' }}>
-        <Header />
+      <Header />
+      <main style={{ paddingTop: '57px' }}>
         <Hero />
-        
-        <div className="section-divider" style={{ borderBottom: '1px solid rgba(216, 217, 218, 0.1)' }} />
-        <div id="products" style={{ padding: '0 var(--spacing-lg)' }}>
-          <ProductGrid />
-        </div>
-
-        <div className="section-divider" style={{ borderBottom: '1px solid rgba(216, 217, 218, 0.1)' }} />
+        <ProductGrid />
         <WhoWeAre />
-
-        <div className="section-divider" style={{ borderBottom: '1px solid rgba(216, 217, 218, 0.1)' }} />
         <WhyChoose />
-
         <Achievements />
-
         <Partners />
-
-        <div className="section-divider" style={{ borderBottom: '1px solid rgba(216, 217, 218, 0.1)' }} />
         <Reviews />
-
-        <div className="section-divider" style={{ borderBottom: '1px solid rgba(216, 217, 218, 0.1)' }} />
         <Contact />
-
         <Footer />
       </main>
     </ThemeProvider>

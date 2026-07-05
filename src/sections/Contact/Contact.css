@@ -1,6 +1,6 @@
 .contact-section {
   padding: var(--spacing-xxxl, 64px) var(--spacing-lg, 24px);
-  background-color: var(--color-background, #020B1E);
+  background-color: #0d0d0d;
   display: flex;
   justify-content: center;
 }

@@ -5,6 +5,14 @@ import './ProductGrid.css';
 
 type FilterCategory = 'all' | 'milk' | 'cheese' | 'butter-ghee' | 'yogurt-cream';
 
+const categories: { key: FilterCategory; label: string; emoji: string }[] = [
+  { key: 'all', label: 'All', emoji: '✦' },
+  { key: 'milk', label: 'Milk', emoji: '🥛' },
+  { key: 'cheese', label: 'Cheese', emoji: '🧀' },
+  { key: 'butter-ghee', label: 'Butter & Ghee', emoji: '🧈' },
+  { key: 'yogurt-cream', label: 'Yogurt & Cream', emoji: '🍶' },
+];
+
 export const ProductGrid: FC = () => {
   const [activeCategory, setActiveCategory] = useState<FilterCategory>('all');
 
@@ -12,47 +20,48 @@ export const ProductGrid: FC = () => {
     ? products
     : products.filter(p => p.category === activeCategory);
 
-  const categories: { key: FilterCategory; label: string }[] = [
-    { key: 'all', label: 'All Collection' },
-    { key: 'milk', label: 'Imperial Milk' },
-    { key: 'cheese', label: 'Artisanal Cheese' },
-    { key: 'butter-ghee', label: 'Butter & Ghee' },
-    { key: 'yogurt-cream', label: 'Yogurt & Cream' },
-  ];
-
   return (
-    <section className="catalog-section" aria-label="Our Catalog">
-      <div className="catalog-header">
-        <h2 className="catalog-title">THE ROYAL SELECTION</h2>
-        <div className="filter-bar" role="tablist" aria-label="Product categories">
-          {categories.map((cat) => (
-            <button
-              key={cat.key}
-              role="tab"
-              aria-selected={activeCategory === cat.key}
-              className={`filter-button ${activeCategory === cat.key ? 'active' : ''}`}
-              onClick={() => setActiveCategory(cat.key)}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
+    <section className="catalog-section" id="products" aria-label="Our Catalog">
+      {/* Section header */}
+      <div className="catalog-head">
+        <span className="catalog-eyebrow">Curated Collection</span>
+        <h2 className="catalog-title">The Royal <em>Selection</em></h2>
+        <p className="catalog-lead">
+          Each product is crafted with uncompromising care — from pasture to pour.
+        </p>
       </div>
 
-      <div className="products-grid-container" data-testid="products-grid">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
-            <div key={product.id} className="grid-item-fade">
-              <ProductCard product={product} />
-            </div>
-          ))
-        ) : (
-          <div className="empty-catalog-state">
-            <h3>No Products Found</h3>
-            <p>Please select another category or check back later.</p>
-          </div>
-        )}
+      {/* Filter pills */}
+      <div className="catalog-filters" role="tablist" aria-label="Product categories">
+        {categories.map((cat) => (
+          <button
+            key={cat.key}
+            role="tab"
+            aria-selected={activeCategory === cat.key}
+            className={`cat-pill ${activeCategory === cat.key ? 'cat-pill--active' : ''}`}
+            onClick={() => setActiveCategory(cat.key)}
+          >
+            <span className="cat-pill__emoji" aria-hidden="true">{cat.emoji}</span>
+            {cat.label}
+          </button>
+        ))}
       </div>
+
+      {/* Product grid / horizontal scroll on mobile */}
+      <div className="products-track" data-testid="products-grid">
+        {filteredProducts.map((product, i) => (
+          <div
+            key={product.id}
+            className="track-item"
+            style={{ animationDelay: `${i * 70}ms` }}
+          >
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile scroll hint */}
+      <p className="scroll-hint" aria-hidden="true">Swipe to explore →</p>
     </section>
   );
 };
